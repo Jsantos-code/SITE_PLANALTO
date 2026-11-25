@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cadastro - Expresso Planalto</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body class="recharge-document">
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-box">
+                    <svg aria-hidden="true" data-bbox="0 0 200 200" preserveaspectratio="xMidYMid meet"
+                        role="presentation" version="1.1" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M196,52V4H4v192h192v-48h4v52H0V0h200v52H196z"></path>
+                        </g>
+                    </svg>
+                </span>
+                <div class="topo">
+                    <h1>Expresso Planalto</h1>
+                    <span>Pouso Alegre</span>
+                </div>
+            </div>
+            <button aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir menu de navegação"
+                class="menu-toggle" onclick="toggleMenu()" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNavigation">
+                <ul>
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link active" href="recarga-online.html">Recarga Online</a></li>
+                    <li><a class="nav-link" href="fale-conosco.html">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="page" id="cadastro">
+            <div class="auth-card">
+                <h2>Crie sua conta</h2>
+                <p class="auth-intro">Cadastre seus dados para acompanhar e recarregar seu passe.</p>
+                <form onsubmit="handleRegistration(event)">
+                    <div class="form-group"><label for="fullName">Nome completo</label><input id="fullName"
+                            placeholder="Digite seu nome completo" required type="text" autocomplete="name" /></div>
+                    <div class="form-group"><label for="registrationCpf">CPF</label><input id="registrationCpf"
+                            placeholder="000.000.000-00" required type="text" autocomplete="off" /></div>
+                    <div class="form-group"><label for="email">E-mail</label><input id="email"
+                            placeholder="voce@exemplo.com" required type="email" autocomplete="email" /></div>
+                    <div class="form-group"><label for="registrationPassword">Senha</label><input
+                            id="registrationPassword" minlength="6" placeholder="Mínimo de 6 caracteres" required
+                            type="password" autocomplete="new-password" /></div>
+                    <div class="form-group"><label for="confirmPassword">Confirme sua senha</label><input
+                            id="confirmPassword" minlength="6" placeholder="Repita sua senha" required type="password"
+                            autocomplete="new-password" /></div>
+                    <div class="alert" id="registrationAlert" role="status" aria-live="polite"></div>
+                    <button class="btn" type="submit">Criar cadastro</button>
+                    <a class="btn cadastro btn-link" href="recarga-online.html">Voltar para entrar</a>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-main footer-main-simple">
+            <div class="footer-brand">
+                <div class="footer-logo">EP</div>
+                <div><strong>Expresso Planalto</strong><span>Pouso Alegre</span></div>
+                <p>Mobilidade que aproxima pessoas e conecta destinos.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Atendimento</h3>
+                <a href="https://wa.me/5535999973408" rel="noopener" target="_blank">WhatsApp ↗</a>
+                <a href="mailto:ouvidoria1pousoalegre@gmail.com">E-mail da ouvidoria</a>
+                <span>0800 038 0140</span>
+                <small>Segunda a sexta, das 08h às 17h45</small>
+            </div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Expresso Planalto. Todos os direitos reservados.</span><span>Pouso
+                Alegre · MG</span></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

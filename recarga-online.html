@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Recarga Online - Expresso Planalto</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body class="recharge-document">
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-box">
+          <svg aria-hidden="true" data-bbox="0 0 200 200" preserveaspectratio="xMidYMid meet" role="presentation"
+            version="1.1" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path d="M196,52V4H4v192h192v-48h4v52H0V0h200v52H196z"></path>
+            </g>
+          </svg>
+        </span>
+        <div class="topo">
+          <h1>Expresso Planalto</h1>
+          <span>Pouso Alegre</span>
+        </div>
+      </div>
+      <button aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir menu de navegação"
+        class="menu-toggle" onclick="toggleMenu()" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="mainNavigation">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link active" href="recarga-online.html">Recarga Online</a></li>
+          <li><a class="nav-link" href="fale-conosco.html">Fale Conosco</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div>
+      <section class="page" id="recarga">
+        <!-- Formulário de Login -->
+        <div class="auth-card" id="loginView">
+          <h2>Área do Usuário</h2>
+          <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+              <label for="cpf">CPF do Titular</label>
+              <input id="cpf" placeholder="000.000.000-00" required="" type="text" />
+            </div>
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <input id="password" placeholder="••••••••" required="" type="password" />
+            </div>
+            <button class="btn" type="submit">Entrar</button>
+            <a class="btn cadastro btn-link" href="cadastro.html">Cadastrar</a>
+          </form>
+        </div>
+        <!-- Painel de Recarga -->
+        <div class="dashboard" id="dashboardView" style="display: none;">
+          <div class="dashboard-heading">
+            <div><span class="dashboard-eyebrow">ÁREA DO USUÁRIO</span>
+              <h2>Minha conta</h2>
+            </div><button class="logout-btn" onclick="handleLogout()" type="button">Sair <span
+                aria-hidden="true">↗</span></button>
+          </div>
+          <!-- Cartão / Saldo -->
+          <div class="balance-card">
+            <div>
+              <span>Saldo Atual</span>
+              <div class="balance-amount" id="cardBalance">R$ 45,50</div>
+            </div>
+            <div>
+              <span>Cartão Cidadão</span>
+              <div class="card-number">8020 •••• •••• 4192</div>
+            </div>
+          </div>
+          <!-- Formulário de Recarga -->
+          <div class="recharge-panel">
+            <h3>Nova Recarga</h3>
+            <div class="alert alert-success" id="successAlert">
+              Recarga efetuada com sucesso!
+            </div>
+            <form onsubmit="handleRecharge(event)">
+              <div class="form-group">
+                <label>Selecione um valor de recarga</label>
+                <div class="preset-values">
+                  <button class="preset-btn" onclick="selectPreset(20, this)" type="button">R$ 20</button>
+                  <button class="preset-btn" onclick="selectPreset(50, this)" type="button">R$ 50</button>
+                  <button class="preset-btn" onclick="selectPreset(100, this)" type="button">R$ 100</button>
+                  <button class="preset-btn" onclick="selectPreset(150, this)" type="button">R$ 150</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="rechargeValue">Outro Valor (R$)</label>
+                <input id="rechargeValue" min="5" placeholder="Ex: 35,00" required="" step="0.50" type="number" />
+              </div>
+              <button class="btn" type="submit">Efetuar Recarga Online</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-main footer-main-simple">
+      <div class="footer-brand">
+        <div class="footer-logo">EP</div>
+        <div><strong>Expresso Planalto</strong><span>Pouso Alegre</span></div>
+        <p>Mobilidade que aproxima pessoas e conecta destinos.</p>
+      </div>
+      <div class="footer-contact">
+        <h3>Atendimento</h3>
+        <a href="https://wa.me/5535999973408" rel="noopener" target="_blank">WhatsApp ↗</a>
+        <a href="mailto:ouvidoria1pousoalegre@gmail.com">E-mail da ouvidoria</a>
+        <span>0800 038 0140</span>
+        <small>Segunda a sexta, das 08h às 17h45</small>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Expresso Planalto. Todos os direitos reservados.</span><span>Pouso Alegre ·
+        MG</span></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
